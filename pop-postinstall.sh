@@ -7,7 +7,6 @@ PACKAGE_LIST=(
 	lutris
 	steam
 	legendary
-	jotta-cli
 	vlc
 	gamemode
 	mcomix3
@@ -26,6 +25,8 @@ PACKAGE_LIST=(
 	java-latest-openjdk
 	java-11-openjdk
 	wine
+	nvtop
+	inxi
 	
 )
 
@@ -35,6 +36,8 @@ FLATPAK_LIST=(
 	io.lbry.lbry-app
 	org.telegram.desktop
 	com.mojang.Minecraft
+	org.gnome.clocks
+
 )
 
 # gnome settings
@@ -90,6 +93,13 @@ sleep 1
 wget https://github.com/GloriousEggroll/proton-ge-custom/releases/download/5.9-GE-8-ST/Proton-5.9-GE-8-ST.tar.gz
 mkdir ~/Proton
 tar -xvf Proton-5.9-GE-8-ST.tar.gz ~/Proton
+
+# grab codium
+echo "Grabbing VSCode without telemetry"
+sleep 1
+wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg | gpg --dearmor | sudo dd of=/etc/apt/trusted.gpg.d/vscodium.gpg 
+echo 'deb https://paulcarroty.gitlab.io/vscodium-deb-rpm-repo/debs/ vscodium main' | sudo tee --append /etc/apt/sources.list.d/vscodium.list 
+sudo apt update -yq && sudo apt install codium -yq
 
 # upgrade packages
 sudo apt-get upgrade -yq
