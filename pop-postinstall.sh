@@ -41,7 +41,6 @@ FLATPAK_LIST=(
 )
 
 # gnome settings
-gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"
 gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled true
 
 # install development tools 
