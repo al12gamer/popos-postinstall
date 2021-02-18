@@ -6,6 +6,7 @@ PACKAGE_LIST=(
 	zsh
 	lutris
 	steam
+	slack-desktop
 	discord
 	legendary
 	vlc
@@ -32,7 +33,6 @@ PACKAGE_LIST=(
 )
 
 FLATPAK_LIST=(
-	com.discordapp.Discord
 	com.github.calo001.fondo
 	io.lbry.lbry-app
 	org.telegram.desktop
