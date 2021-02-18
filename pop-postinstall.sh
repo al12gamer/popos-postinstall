@@ -6,6 +6,7 @@ PACKAGE_LIST=(
 	zsh
 	lutris
 	steam
+	discord
 	legendary
 	vlc
 	gamemode
