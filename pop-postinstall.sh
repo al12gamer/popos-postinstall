@@ -22,13 +22,12 @@ PACKAGE_LIST=(
 	neofetch
 	nmap
 	pv
-	virt-manager
 	wget
 	java-latest-openjdk
-	java-11-openjdk
 	wine
 	nvtop
 	inxi
+	
 	
 )
 
@@ -100,6 +99,10 @@ sleep 1
 wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg | gpg --dearmor | sudo dd of=/etc/apt/trusted.gpg.d/vscodium.gpg 
 echo 'deb https://paulcarroty.gitlab.io/vscodium-deb-rpm-repo/debs/ vscodium main' | sudo tee --append /etc/apt/sources.list.d/vscodium.list 
 sudo apt update -yq && sudo apt install codium -yq
+
+# grab ukuu alternative
+sudo add-apt-repository ppa:cappelikan/ppa
+sudo apt update -y && sudo apt install -y mainline
 
 # upgrade packages
 sudo apt-get upgrade -yq
