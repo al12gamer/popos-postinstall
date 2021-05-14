@@ -43,9 +43,6 @@ FLATPAK_LIST=(
 # gnome settings
 gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled true
 
-# install development tools 
-#sudo dnf groupinstall "Development Tools" -yq
-
 # add flathub repository
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
@@ -54,14 +51,11 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
 # add Proton Updater from Auna Naseef
 echo "Adding a Proton Updater script from Auna Naseef on Github. Cd into ~/protonge-updater to update your version in the future."
 sleep 1
-git clone https://github.com/AUNaseef/protonge-updater.git
+pip install protonup -y
 
 # add virtio
 # add this for ubuntu based distros
  
-# add jotta-cli for backups
-# WIP echo Jottacloud.txt > /etc/yum.repos.d/JottaCLI.repo
-
 # update repositories
 
 sudo apt-get update -yq
