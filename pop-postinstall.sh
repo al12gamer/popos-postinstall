@@ -52,7 +52,7 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
 # add Proton Updater from Auna Naseef
 echo "Adding a Proton Updater script from Auna Naseef on Github. Cd into ~/protonge-updater to update your version in the future."
 sleep 1
-pip install protonup -y
+sudo apt install python-pip -y && pip install protonup -y
 
 # add virtio
 # add this for ubuntu based distros
