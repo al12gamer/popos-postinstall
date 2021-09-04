@@ -27,8 +27,8 @@ PACKAGE_LIST=(
 	wine
 	nvtop
 	inxi
-	
-	
+	ppa-purge
+		
 )
 
 FLATPAK_LIST=(
@@ -90,8 +90,11 @@ echo 'deb https://paulcarroty.gitlab.io/vscodium-deb-rpm-repo/debs/ vscodium mai
 sudo apt update -yq && sudo apt install codium -yq
 
 # grab ukuu alternative
-sudo add-apt-repository ppa:cappelikan/ppa
+sudo add-apt-repository ppa:cappelikan/ppa -y
 sudo apt update -y && sudo apt install -y mainline
+
+# grab fresher mesa drivers (mainly for Intel Xe or AMD RDNA2 or newer)
+sudo add-apt-repository ppa:kisak/kisak-mesa -y
 
 # upgrade packages
 sudo apt update -y
