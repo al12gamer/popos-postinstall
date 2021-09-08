@@ -25,7 +25,7 @@ PACKAGE_LIST=(
 	wget
 	java-latest-openjdk
 	wine
-	nvtop
+	radeontop
 	inxi
 	ppa-purge
 		
@@ -50,7 +50,7 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
 # add third party software
 
 # add Proton Updater from Auna Naseef
-echo "Adding a Proton Updater script from Auna Naseef on Github. Cd into ~/protonge-updater to update your version in the future."
+echo "Adding a Proton Updater script from Auna Naseef on Github. Run Protonup in the terminal to update proton versions in the future"
 sleep 1
 sudo apt install python-pip -y && pip install protonup -y
 
