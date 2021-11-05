@@ -32,10 +32,8 @@ PACKAGE_LIST=(
 )
 
 FLATPAK_LIST=(
-	com.github.calo001.fondo
 	io.lbry.lbry-app
 	org.telegram.desktop
-	com.mojang.Minecraft
 	org.gnome.clocks
 	net.veloren.airshipper
 
@@ -53,9 +51,6 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
 echo "Adding a Proton Updater script from Auna Naseef on Github. Run Protonup in the terminal to update proton versions in the future"
 sleep 1
 sudo apt install python-pip -y && pip install protonup -y
-
-# add virtio
-# add this for ubuntu based distros
  
 # update repositories
 
@@ -97,6 +92,7 @@ sudo apt update -y && sudo apt install -y mainline
 sudo add-apt-repository ppa:kisak/kisak-mesa -y
 
 # upgrade packages
+sudo apt clean -y
 sudo apt update -y
 sudo apt full-upgrade -y
-sudo apt autoremove -y
+sudo apt autoremove --purge -y
