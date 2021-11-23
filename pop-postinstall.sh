@@ -8,7 +8,6 @@ PACKAGE_LIST=(
 	steam
 	slack-desktop
 	discord
-	legendary
 	vlc
 	gamemode
 	mcomix3
@@ -36,6 +35,8 @@ FLATPAK_LIST=(
 	org.telegram.desktop
 	org.gnome.clocks
 	net.veloren.airshipper
+	org.gnome.Polari.flatpakref
+	de.haeckerfelix.Fragments
 
 )
 
