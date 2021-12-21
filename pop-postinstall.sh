@@ -26,6 +26,7 @@ PACKAGE_LIST=(
 	radeontop
 	inxi
 	ppa-purge
+	heif-gdk-pixbuf
 		
 )
 
