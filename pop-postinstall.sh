@@ -31,13 +31,11 @@ PACKAGE_LIST=(
 )
 
 FLATPAK_LIST=(
-	io.lbry.lbry-app
 	org.telegram.desktop
-	org.gnome.clocks
 	net.veloren.airshipper
-	org.gnome.Polari.flatpakref
 	de.haeckerfelix.Fragments
-
+	net.davidotek.pupgui2
+	com.usebottles.bottles
 )
 
 # gnome settings
