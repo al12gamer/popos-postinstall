@@ -2,7 +2,6 @@
 
 PACKAGE_LIST=(
 	vim
-	calibre
 	zsh
 	lutris
 	steam
@@ -33,9 +32,9 @@ PACKAGE_LIST=(
 FLATPAK_LIST=(
 	org.telegram.desktop
 	net.veloren.airshipper
-	de.haeckerfelix.Fragments
 	net.davidotek.pupgui2
 	com.usebottles.bottles
+	org.signal.Signal
 )
 
 # gnome settings
@@ -46,10 +45,8 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
 
 # add third party software
 
-# add Proton Updater from Auna Naseef
-echo "Adding a Proton Updater script from Auna Naseef on Github. Run Protonup in the terminal to update proton versions in the future"
-sleep 1
-sudo apt install python-pip -y && pip install protonup -y
+# add protonup-qt
+flatpak install flathub net.davidotek.pupgui2 -y
  
 # update repositories
 
