@@ -24,7 +24,6 @@ PACKAGE_LIST=(
 	wine
 	radeontop
 	inxi
-	ppa-purge
 	heif-gdk-pixbuf
 		
 )
@@ -44,9 +43,6 @@ gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled true
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 # add third party software
-
-# add protonup-qt
-flatpak install flathub net.davidotek.pupgui2 -y
  
 # update repositories
 
