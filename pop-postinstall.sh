@@ -8,7 +8,6 @@ PACKAGE_LIST=(
 	slack-desktop
 	discord
 	vlc
-	gamemode
 	mcomix3
 	htop
 	gnome-boxes
@@ -32,7 +31,6 @@ FLATPAK_LIST=(
 	org.telegram.desktop
 	net.veloren.airshipper
 	net.davidotek.pupgui2
-	com.usebottles.bottles
 	org.signal.Signal
 )
 
@@ -84,9 +82,6 @@ sudo apt update -y && sudo apt install -y mainline
 echo 'deb http://deb.xanmod.org releases main' | sudo tee /etc/apt/sources.list.d/xanmod-kernel.list
 wget -qO - https://dl.xanmod.org/gpg.key | sudo apt-key --keyring /etc/apt/trusted.gpg.d/xanmod-kernel.gpg add -
 sudo apt update -y && sudo apt install linux-xanmod -y
-
-# grab fresher mesa drivers (mainly for Intel Xe or AMD RDNA2 or newer)
-sudo add-apt-repository ppa:kisak/kisak-mesa -y
 
 # upgrade packages
 sudo apt clean -y
