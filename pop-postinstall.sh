@@ -8,6 +8,7 @@ PACKAGE_LIST=(
 	slack-desktop
 	discord
 	vlc
+	vlc-plugin-access-extra
 	mcomix3
 	htop
 	gnome-boxes
