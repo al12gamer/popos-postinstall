@@ -90,5 +90,8 @@ sudo apt update -y
 sudo apt full-upgrade -y
 sudo apt autoremove --purge -y
 
+# grab mullvad
+cd && wget --content-disposition https://mullvad.net/download/app/deb/latest && sudo dpkg -i Mullvad*.deb
+
 # open github to remind me to set up github
 firefox https://github.com
