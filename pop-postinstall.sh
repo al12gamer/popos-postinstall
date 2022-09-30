@@ -3,8 +3,6 @@
 PACKAGE_LIST=(
 	vim
 	zsh
-	lutris
-	steam
 	slack-desktop
 	discord
 	vlc
@@ -31,8 +29,6 @@ PACKAGE_LIST=(
 FLATPAK_LIST=(
 	org.telegram.desktop
 	net.veloren.airshipper
-	net.davidotek.pupgui2
-	org.signal.Signal
 )
 
 # gnome settings
@@ -87,6 +83,8 @@ sudo apt update -y && sudo apt install linux-xanmod -y
 # upgrade packages
 sudo apt clean -y
 sudo apt update -y
+sudo apt install -f
+sudo dpkg --configure -a
 sudo apt full-upgrade -y
 sudo apt autoremove --purge -y
 
