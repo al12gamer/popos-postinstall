@@ -10,7 +10,6 @@ PACKAGE_LIST=(
 	mcomix3
 	htop
 	gnome-boxes
-	handbrake
 	gnome-tweaks
 	python3
 	youtube-dl
@@ -29,6 +28,7 @@ PACKAGE_LIST=(
 FLATPAK_LIST=(
 	org.telegram.desktop
 	net.veloren.airshipper
+	org.mozilla.firefox
 )
 
 # gnome settings
@@ -71,11 +71,10 @@ wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.g
 echo 'deb https://paulcarroty.gitlab.io/vscodium-deb-rpm-repo/debs/ vscodium main' | sudo tee --append /etc/apt/sources.list.d/vscodium.list 
 sudo apt update -yq && sudo apt install codium -yq
 
-# grab ukuu alternative
-sudo add-apt-repository ppa:cappelikan/ppa -y
-sudo apt update -y && sudo apt install -y mainline
+# remove default firefox
+sudo apt purge firefox -y
 
-# setup xanmod
+# setup xanmod for better kernel scheduler experience
 echo 'deb http://deb.xanmod.org releases main' | sudo tee /etc/apt/sources.list.d/xanmod-kernel.list
 wget -qO - https://dl.xanmod.org/gpg.key | sudo apt-key --keyring /etc/apt/trusted.gpg.d/xanmod-kernel.gpg add -
 sudo apt update -y && sudo apt install linux-xanmod -y
