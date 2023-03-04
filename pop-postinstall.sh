@@ -22,13 +22,14 @@ PACKAGE_LIST=(
 	radeontop
 	inxi
 	heif-gdk-pixbuf
-		
+	kde-standard		
 )
 
 FLATPAK_LIST=(
 	org.telegram.desktop
 	net.veloren.airshipper
 	org.mozilla.firefox
+	info.febvre.Komikku
 )
 
 # gnome settings
