@@ -2,7 +2,7 @@
 
 PACKAGE_LIST=(
 	vim
-	zsh
+	fish
 	slack-desktop
 	discord
 	vlc
