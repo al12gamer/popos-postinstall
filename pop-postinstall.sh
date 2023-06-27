@@ -77,6 +77,7 @@ sudo apt purge firefox -y
 # setup xanmod for better kernel scheduler experience
 echo "grabbing xanmod kernel, as it's more up to date"
 sleep 2
+cd
 echo 'deb http://deb.xanmod.org releases main' | sudo tee /etc/apt/sources.list.d/xanmod-kernel.list
 wget -qO - https://dl.xanmod.org/gpg.key | sudo apt-key --keyring /etc/apt/trusted.gpg.d/xanmod-kernel.gpg add -
 sudo apt update -y && sudo apt install linux-xanmod -y
@@ -97,7 +98,7 @@ sudo apt full-upgrade -y
 sudo apt autoremove --purge -y
 
 # grab mullvad
-cd && cd Downloads && wget --content-disposition https://mullvad.net/download/app/deb/latest && sudo dpkg -i Mullvad*.deb
+cd Downloads && wget --content-disposition https://mullvad.net/download/app/deb/latest && sudo dpkg -i Mullvad*.deb
 cd
 
 # open github to remind me to set up github
