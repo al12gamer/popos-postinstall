@@ -108,7 +108,7 @@ cd
 
 echo "BASH ALIAS"
 sleep 2
-echo " mup='cd /home/$USER/Downloads && sudo rm -r Mullvad*.rpm && sudo apt remove mullvad-rpm -y && wget --content-disposition https://mullvad.net/download/app/deb/latest && sudo dpkg -i Mullvad*.rpm && cowsay DONE NOW' "
+echo " mup='cd /home/$USER/Downloads && sudo rm -r Mullvad*.deb && sudo apt remove mullvad-vpn -y && wget --content-disposition https://mullvad.net/download/app/deb/latest && sudo dpkg -i Mullvad*.rpm && cowsay DONE NOW' "
 sleep 4
 echo "DONESIES"
 sleep 2
