@@ -23,12 +23,16 @@ PACKAGE_LIST=(
 	heif-gdk-pixbuf
 	kde-standard	
  	curl
+  	cpu-x
+   	build-essential 
 )
 
 FLATPAK_LIST=(
 	org.telegram.desktop
 	net.veloren.airshipper
 	org.mozilla.firefox
+ 	org.signal.Signal
+  	org.telegram.desktop
 )
 
 # gnome settings
@@ -48,7 +52,7 @@ for package_name in ${PACKAGE_LIST[@]}; do
 	if ! sudo apt list --installed | grep -q "^\<$package_name\>"; then
 		echo "installing $package_name..."
 		sleep .5
-		sudo apt-get install "$package_name" -yq
+		sudo apt-get install "$package_name" -y -q
 		echo "$package_name installed"
 	else
 		echo "$package_name already installed"
@@ -57,7 +61,7 @@ done
 
 for flatpak_name in ${FLATPAK_LIST[@]}; do
 	if ! flatpak list | grep -q $flatpak_name; then
-		flatpak install "$flatpak_name" -yq
+		flatpak install "$flatpak_name" -y
 	else
 		echo "$package_name already installed"
 	fi
@@ -69,10 +73,11 @@ echo "Grabbing VSCode without telemetry"
 sleep 2
 wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg | gpg --dearmor | sudo dd of=/etc/apt/trusted.gpg.d/vscodium.gpg 
 echo 'deb https://paulcarroty.gitlab.io/vscodium-deb-rpm-repo/debs/ vscodium main' | sudo tee --append /etc/apt/sources.list.d/vscodium.list 
-sudo apt update -yq && sudo apt install codium -yq
+sudo apt update -y && sudo apt install codium -y
 
-# remove default firefox
+# remove default firefox and install flatpak
 sudo apt purge firefox -y
+flatpak install 
 
 # setup xanmod for better kernel scheduler experience
 echo "grabbing xanmod kernel, as it's more up to date"
@@ -101,5 +106,9 @@ sudo apt autoremove --purge -y
 cd Downloads && wget --content-disposition https://mullvad.net/download/app/deb/latest && sudo dpkg -i Mullvad*.deb
 cd
 
-# open github to remind me to set up github
-firefox https://github.com
+echo "BASH ALIAS"
+sleep 2
+echo " mup='cd /home/$USER/Downloads && sudo rm -r Mullvad*.rpm && sudo apt remove mullvad-rpm -y && wget --content-disposition https://mullvad.net/download/app/deb/latest && sudo dpkg -i Mullvad*.rpm && cowsay DONE NOW' "
+sleep 4
+echo "DONESIES"
+sleep 2
