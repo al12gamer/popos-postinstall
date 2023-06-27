@@ -77,7 +77,7 @@ sudo apt update -y && sudo apt install codium -y
 
 # remove default firefox and install flatpak
 sudo apt purge firefox -y
-flatpak install 
+flatpak install flathub org.mozilla.firefox -y
 
 # setup xanmod for better kernel scheduler experience
 echo "grabbing xanmod kernel, as it's more up to date"
