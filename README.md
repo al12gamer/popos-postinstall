@@ -1,5 +1,5 @@
 # popos-postinstall
-Post-install scripts for software in Pop!_OS
+Post-install scripts for software that I've used in Pop!_OS for work.
 
 # Quick Start
 ```
