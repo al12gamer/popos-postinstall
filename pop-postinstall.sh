@@ -103,13 +103,11 @@ sudo apt full-upgrade -y
 sudo apt autoremove --purge -y
 
 # grab mullvad
-cd Downloads && wget --content-disposition https://mullvad.net/download/app/deb/latest && sudo dpkg -i Mullvad*.deb
+cd /home/$USER/Downloads && wget --content-disposition https://mullvad.net/download/app/deb/latest && sudo dpkg -i Mullvad*.deb
 cd
 
 echo "ADDING MUP BASH ALIAS"
 sleep 4
-cd /home/$USER/Downloads && wget --content-disposition https://mullvad.net/download/app/deb/latest
-cd
 alias -p mup='cd /home/$USER/Downloads && sudo rm -r Mullvad*.deb && sudo apt purge mullvad-vpn -y && wget --content-disposition https://mullvad.net/download/app/deb/latest && sudo dpkg -i Mullvad*.deb && cowsay DONE NOW'
 sleep 4
 echo "DONESIES"
