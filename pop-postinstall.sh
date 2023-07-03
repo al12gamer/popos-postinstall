@@ -90,7 +90,7 @@ sudo apt update -y && sudo apt install linux-xanmod -y
 # grab brave
 echo "Grabbing the Brave web browser as an alternative to chrome"
 sleep 2
-sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-relaease.s3.brave.com/brave-browser-archive-keyring.gpg
 echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
 sudo apt update -y && sudo apt install brave-browser -y
 
@@ -109,6 +109,7 @@ cd
 echo "ADDING MUP BASH ALIAS"
 sleep 4
 alias -p mup='cd /home/$USER/Downloads && sudo rm -r Mullvad*.deb && sudo apt purge mullvad-vpn -y && wget --content-disposition https://mullvad.net/download/app/deb/latest && sudo dpkg -i Mullvad*.deb && cowsay DONE NOW'
+alias -p upd='sudo apt clean && sudo apt update -y && sudo dpkg --configure -a && sudo apt install -f && sudo apt full-upgrade -y && sudo apt autoremove --purge'
 sleep 4
 echo "DONESIES"
 sleep 2
