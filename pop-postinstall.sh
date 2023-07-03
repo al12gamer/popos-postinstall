@@ -2,12 +2,12 @@
 
 PACKAGE_LIST=(
 	vim
-	fish
+ 	cowsay
+  	asciinema
 	slack-desktop
 	discord
 	vlc
-	vlc-plugin-access-extra
-	mcomix3
+ 	mcomix3
 	htop
 	gnome-boxes
 	gnome-tweaks
@@ -106,9 +106,11 @@ sudo apt autoremove --purge -y
 cd Downloads && wget --content-disposition https://mullvad.net/download/app/deb/latest && sudo dpkg -i Mullvad*.deb
 cd
 
-echo "BASH ALIAS"
-sleep 2
-echo " mup='cd /home/$USER/Downloads && sudo rm -r Mullvad*.deb && sudo apt remove mullvad-vpn -y && wget --content-disposition https://mullvad.net/download/app/deb/latest && sudo dpkg -i Mullvad*.rpm && cowsay DONE NOW' "
+echo "ADDING MUP BASH ALIAS"
+sleep 4
+cd /home/$USER/Downloads && wget --content-disposition https://mullvad.net/download/app/deb/latest
+cd
+alias -p mup='cd /home/$USER/Downloads && sudo rm -r Mullvad*.deb && sudo apt purge mullvad-vpn -y && wget --content-disposition https://mullvad.net/download/app/deb/latest && sudo dpkg -i Mullvad*.deb && cowsay DONE NOW'
 sleep 4
 echo "DONESIES"
 sleep 2
