@@ -4,7 +4,6 @@ PACKAGE_LIST=(
 	vim
  	cowsay
   	asciinema
-	slack-desktop
 	discord
 	vlc
  	mcomix3
@@ -28,7 +27,6 @@ PACKAGE_LIST=(
 )
 
 FLATPAK_LIST=(
-	org.telegram.desktop
 	net.veloren.airshipper
 	org.mozilla.firefox
  	org.signal.Signal
