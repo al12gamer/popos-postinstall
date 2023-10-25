@@ -2,6 +2,7 @@
 
 PACKAGE_LIST=(
 	vim
+ 	fish
  	cowsay
   	asciinema
 	discord
@@ -75,7 +76,6 @@ sudo apt update -y && sudo apt install codium -y
 
 # remove default firefox and install flatpak
 sudo apt purge firefox -y
-flatpak install flathub org.mozilla.firefox -y
 
 # setup xanmod for better kernel scheduler experience
 echo "grabbing xanmod kernel, as it's more up to date"
@@ -105,9 +105,11 @@ cd /home/$USER/Downloads && wget --content-disposition https://mullvad.net/downl
 cd
 
 echo "ADDING MUP BASH ALIAS"
+fish
 sleep 4
-alias -p mup='cd /home/$USER/Downloads && sudo rm -r Mullvad*.deb && sudo apt purge mullvad-vpn -y && wget --content-disposition https://mullvad.net/download/app/deb/latest && sudo dpkg -i Mullvad*.deb && cowsay DONE NOW'
-alias -p upd='sudo apt clean && sudo apt update -y && sudo dpkg --configure -a && sudo apt install -f && sudo apt full-upgrade -y && sudo apt autoremove --purge'
+alias -s mup='cd /home/$USER/Downloads && sudo rm -r Mullvad*.deb && sudo apt purge mullvad-vpn -y && wget --content-disposition https://mullvad.net/download/app/deb/latest && sudo dpkg -i Mullvad*.deb && cowsay DONE NOW'
+alias -s ul='sudo apt clean && sudo apt update -y && sudo dpkg --configure -a && sudo apt install -f && sudo apt full-upgrade -y && sudo apt autoremove --purge'
 sleep 4
 echo "DONESIES"
 sleep 2
+exit
